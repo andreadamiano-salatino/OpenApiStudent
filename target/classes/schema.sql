@@ -1,0 +1,8 @@
+CREATE TABLE STUDENTS (
+    id INTEGER NOT NULL,
+    serial_number VARCHAR(255) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    surname VARCHAR(255) NOT NULL,
+    date_of_birth VARCHAR(255) NOT NULL,
+    cf VARCHAR(255) NOT NULL
+);
