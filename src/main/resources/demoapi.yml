@@ -56,7 +56,6 @@ components:
           type: string
         dateOfBirth:
           type: string
-          format: date
         cf:
           type: string
     Students:

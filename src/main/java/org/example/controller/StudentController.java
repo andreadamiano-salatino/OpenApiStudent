@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
+
 @RestController
 @RequestMapping(value = "/api/v1/students/")
 @Slf4j
@@ -24,14 +25,11 @@ public class StudentController implements StudentsApi {
     private static final Logger LOGGER = LoggerFactory.getLogger(StudentController.class);
 
     @Autowired
-    private ObjectMapper objectMapper;
-
-    @Autowired
     private StudentService studentService;
 
     @Override
     public Optional<ObjectMapper> getObjectMapper() {
-        return Optional.of(objectMapper);
+        return Optional.empty();
     }
 
     @Override
@@ -43,7 +41,7 @@ public class StudentController implements StudentsApi {
     public ResponseEntity<Students> getStudents() {
         LOGGER.info("Calling the getStudents API!");
 
-        Students students = studentService.retriveAllStudents();
+        Students students = studentService.retrieveAllStudents();
 
         if (students == null || students.isEmpty())
             return ResponseEntity.status(HttpStatus.NOT_FOUND.value()).build();

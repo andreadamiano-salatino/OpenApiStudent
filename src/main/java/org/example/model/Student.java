@@ -4,22 +4,21 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Date;
+
 
 @Entity
 @Table(name = "students")
-@SequenceGenerator(name = "STUDENT_SEQUENCE", sequenceName = "STUDENTS_SEQUENCE_ID", allocationSize = 1)
+@SequenceGenerator(name = "STUDENTS_SEQUENCE", sequenceName = "STUDENTS_SEQUENCE_ID", allocationSize = 1)
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class Student {
 
     @Id
     @Getter
     @Setter
-    private Integer id;
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="STUDENTS_SEQUENCE")
+    private Integer  id;
     @Getter
     @Setter
     private String serialNumber;
