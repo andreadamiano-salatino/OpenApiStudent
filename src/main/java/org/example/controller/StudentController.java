@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(value = "/api/v1/student/")
+@RequestMapping(value = "/api/v1/students/")
 @Slf4j
 public class StudentController implements StudentsApi {
 

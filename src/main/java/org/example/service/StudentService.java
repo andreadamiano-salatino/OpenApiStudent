@@ -31,7 +31,7 @@ public class StudentService {
             outputStudent.setSerialNumber(student.getSerialNumber());
             outputStudent.setName(student.getName());
             outputStudent.setSurname(student.getSurname());
-            outputStudent.setDateOfBirth(student.getDateOfBirth());
+            outputStudent.setDateOfBirth(student.getDateOfBirth().toString());
             outputStudent.setCf(student.getCf());
             students.add(outputStudent);
 

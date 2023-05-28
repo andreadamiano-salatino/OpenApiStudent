@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import java.sql.Date;
 
 @Entity
 @Table(name = "students")
@@ -30,7 +31,7 @@ public class Student {
     private String surname;
     @Getter
     @Setter
-    private String dateOfBirth;
+    private Date dateOfBirth;
     @Getter
     @Setter
     private String cf;
